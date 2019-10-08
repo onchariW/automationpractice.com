@@ -12,5 +12,8 @@ public class HomepageTest extends BaseTest {
 		
 		Assert.assertTrue(HomePage.verifyHomePageTitle());
 	}
+	
+
+
 
 }

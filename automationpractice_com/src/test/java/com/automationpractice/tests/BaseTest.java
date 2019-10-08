@@ -22,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 
 	public static WebDriver driver;
-	public static final boolean REMOTE_DRIVER = false;
+	public static final boolean REMOTE_DRIVER = true;
 	public static final String BROWSER = "Chrome";
 	private static final String URL = "automationpractice.com/";
     public HomePage homePage; 
@@ -40,10 +40,10 @@ public class BaseTest {
 		homePage = new HomePage(driver);
 		authentication = new AuthenticationPage(driver);
 		
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
-	
+
 	private void setupLocalDriver() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();	
@@ -61,7 +61,7 @@ public class BaseTest {
 			    capabilities.setCapability("browserName", "Safari");
 			    capabilities.setCapability("platform", "macOS 10.13");
 			    capabilities.setCapability("version", "11.1");
-			    capabilities.setCapability("name", "Onchari Test Omollo");
+			    capabilities.setCapability("name", "Test methods in Saucelabs");
 
 		}
 		
