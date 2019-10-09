@@ -22,11 +22,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 
 	public static WebDriver driver;
-	public static final boolean REMOTE_DRIVER = true;
+	public static final boolean REMOTE_DRIVER = false;
 	public static final String BROWSER = "Chrome";
 	private static final String URL = "automationpractice.com/";
     public HomePage homePage; 
     public static AuthenticationPage authentication;
+    public static RegistrationPage registration;
 	
 	@BeforeTest(alwaysRun = true)
 	public void setupWebDriver() throws MalformedURLException {		
@@ -37,8 +38,10 @@ public class BaseTest {
 		else {
 			setupLocalDriver();
 		}
+		
 		homePage = new HomePage(driver);
 		authentication = new AuthenticationPage(driver);
+		registration = new RegistrationPage(driver);
 		
 		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
@@ -78,6 +81,7 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public void loadWebApplication() {
 		 driver.navigate().to("http://automationpractice.com/");
+		 driver.manage().window().maximize();
 	}
 	
 	

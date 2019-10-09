@@ -17,10 +17,12 @@ public class AuthenticationPage extends BasePage {
 		By invalidloginEmail = By.xpath("//div[@class = \"form-group form-error\"]/input[@id=\"email\"]");
 		static By validLoginEmail = By.xpath("//div[@class = \"form-group form-ok\"]/input[@id=\"email\"]");
 		
+		//create account related
 		By emailCreate = By.id("email_create");
 		By createEmailRed = By.xpath("//div[@class=\"form-group form-error\"]/input[@id=\"email_create\"]");
 		By createEmailGreen = By.xpath("//div[@class=\"form-group form-ok\"]/input[@id=\"email_create\"]") ; 
-		By createAccount = By.id("SubmitCreate");
+		By createAccountButton = By.id("SubmitCreate");
+		
 		By loginForm = By.xpath( "//form[@id=\"login_form\"]");
 		By emailAddressField = By.id("email");
 		By passwordField = 	By.id("passwd");
@@ -56,6 +58,8 @@ public class AuthenticationPage extends BasePage {
 		}
 		
 	
+		
+
 		
 	//Enter Login Credentials
 	public void setLoginCredentials(String username, String password) {
@@ -94,6 +98,48 @@ public class AuthenticationPage extends BasePage {
 		
 	}
 	
+	
+	/*****************************************************
+			Registration Email Authentication
+	****************************************************/
+	
+	// ----------getters----------------------------
+	
+	private WebElement getEmailToCreateAccountField() {
+		return Utils.waitForPresenceOfAutoElement(emailCreate);
+	}
+	
+	private WebElement getCreateAccountButton() {
+		return Utils.waitForLinkToBeClickable(createAccountButton);
+	}
+	
+	//--------------setters------------------------------
+	public void setEmailToCreateAccountField(String email) {
+		getEmailToCreateAccountField().sendKeys(email);
+	}
+	
+	public void clickCreateAnAccountButton() {
+		getCreateAccountButton().click();
+	}
+	
+	
+	//createAccount
+	public RegistrationPage createAnAccount(String email) {
+		setEmailToCreateAccountField(email);
+		clickCreateAnAccountButton();
+		return new RegistrationPage(driver);
+	}
+
+	public void checkMrRadioButton() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+	
+
 	
 
 	

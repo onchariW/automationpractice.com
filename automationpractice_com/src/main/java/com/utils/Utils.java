@@ -16,10 +16,8 @@ public class Utils extends BasePage {
 	
 	
 	
-	public static WebElement waitForLinkToBeClickable(By locator) {
-		
-		return wait.until(ExpectedConditions.elementToBeClickable(locator));
-		
+	public static WebElement waitForLinkToBeClickable(By locator) {		
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));	
 	}
 
 
@@ -27,11 +25,9 @@ public class Utils extends BasePage {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));	
 	}
 
-
-
 	public static WebElement waitForVisibilityOfAutoElement(By locator) {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
-
+	
 	
 }
