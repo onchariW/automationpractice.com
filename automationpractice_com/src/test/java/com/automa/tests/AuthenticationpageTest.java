@@ -1,4 +1,4 @@
-package com.automationpractice.tests;
+package com.automa.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.pages.AuthenticationPage;

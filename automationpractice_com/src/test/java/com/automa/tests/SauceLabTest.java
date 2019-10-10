@@ -1,4 +1,4 @@
-package com.automationpractice.tests;
+package com.automa.tests;
 
 import java.net.MalformedURLException;
 import java.net.URL;

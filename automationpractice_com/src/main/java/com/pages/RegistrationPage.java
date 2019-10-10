@@ -1,50 +1,46 @@
 package com.pages;
 
-import javax.print.attribute.standard.Chromaticity;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import org.testng.reporters.EmailableReporter;
 
 import com.utils.Utils;
 
 public class RegistrationPage extends BasePage {
 
-	By accountCreationForm = By.id("account-creation_form");
-	By mrTitle = By.id("id_gender1");
-	By mrsTitle = By.id("id_gender2");
-	By customerFirstname = By.id("customer_firstname");
-	By customerLastname = By.id("customer_lastname");
-	By Email = By.id("email");
-	By password = By.id("passwd");
+	static By accountCreationForm = By.id("account-creation_form");
+	static By mrTitle = By.id("id_gender1");
+	static By mrsTitle = By.id("id_gender2");
+	static By customerFirstname = By.id("customer_firstname");
+	static By customerLastname = By.id("customer_lastname");
+	static By Email = By.id("email");
+	static By password = By.id("passwd");
 
-	By birthDay = By.id("days");
-	By birthMonth = By.id("months");
-	By birthYear = By.id("years");
+	static By birthDay = By.id("days");
+	static By birthMonth = By.id("months");
+	static By birthYear = By.id("years");
 
-	By newsletter = By.xpath("//input[@id =\"newsletter\"]");
-	By specialOffer = By.xpath("//input[@id =\"optin\"]");
+	static By newsletter = By.xpath("//input[@id =\"newsletter\"]");
+	static By specialOffer = By.xpath("//input[@id =\"optin\"]");
 
-	By firstname = By.id("firstname");
-	By lastname = By.id("lastname");
+	static By firstname = By.id("firstname");
+	static By lastname = By.id("lastname");
 
-	By company = By.id("company");
-	By address1 = By.id("address1");
-	By address2 = By.id("address2");
-	By city = By.id("city");
+	static By company = By.id("company");
+	static By address1 = By.id("address1");
+	static By address2 = By.id("address2");
+	static By city = By.id("city");
 
-	By state = By.xpath("//select[@id =\"id_state\"]");
-	By postcode = By.id("postcode");
-	By country = By.xpath("//select[@id= \"id_country\"]/option[@value =\"21\"]");
-	By other = By.id("other");
+	static By state = By.xpath("//select[@id =\"id_state\"]");
+	static By postcode = By.id("postcode");
+	static By country = By.xpath("//select[@id= \"id_country\"]/option[@value =\"21\"]");
+	static By otherinfo = By.id("other");
 
-	By homePhone = By.id("phone");
-	By mobilePhone = By.id("phone_mobile");
-	By submitAccount = By.id("submitAccount");
-	By alias = By.id("alias");
+	static By homePhone = By.id("phone");
+	static By mobilePhone = By.id("phone_mobile");
+	
+	static By alias = By.id("alias");
+	static By submitAccount = By.id("submitAccount");
 
 	public RegistrationPage(WebDriver webDriver) {
 		super(webDriver);
@@ -52,111 +48,221 @@ public class RegistrationPage extends BasePage {
 	}
 
 	// getters
-	private WebElement getcustomerFirstnameField() {
+
+	
+	public WebElement getWebElement(By by) {
+		return Utils.waitForPresenceOfAutoElement(by);
+	}
+	
+	public static WebElement getMrRadioButton() {
+		return Utils.waitForPresenceOfAutoElement(mrTitle);
+	}
+
+	public static WebElement getMrsRadioButton() {
+		return Utils.waitForPresenceOfAutoElement(mrsTitle);
+	}
+
+	private static WebElement getcustomerFirstnameField() {
 		return Utils.waitForPresenceOfAutoElement(customerFirstname);
 	}
 
-	private WebElement getcustomerLastnameField() {
+	private static WebElement getcustomerLastnameField() {
 		return Utils.waitForPresenceOfAutoElement(customerLastname);
 	}
 
+	private static WebElement getPasswordField() {
+		return Utils.waitForPresenceOfAutoElement(password);
+	}
+
+	public static WebElement getBirthDayField() {
+		return Utils.waitForPresenceOfAutoElement(birthDay);
+	}
+
+	public static WebElement getBirthMonthField() {
+		return Utils.waitForPresenceOfAutoElement(birthMonth);
+	}
+
+	public static WebElement getBirthYearField() {
+		return Utils.waitForPresenceOfAutoElement(birthYear);
+	}
+	
+	public static WebElement  getSignupForNewsletterCheckbox() {
+		return Utils.waitForPresenceOfAutoElement(newsletter);
+	}
+	public static WebElement getReceiveOfferCheckbox() {
+		return Utils.waitForPresenceOfAutoElement(specialOffer);
+	}
+	
+	public static WebElement getFirstName() {
+		return Utils.waitForPresenceOfAutoElement(firstname);
+	}
+	
+	public static WebElement getLastName() {
+		return Utils.waitForPresenceOfAutoElement(lastname);
+	}
+	
+	public static WebElement getCompanyField() {
+		return Utils.waitForPresenceOfAutoElement(company);
+	}
+	public static WebElement getAddress1() {
+		return Utils.waitForPresenceOfAutoElement(address1);
+	}
+	
+	public static WebElement getAddres2() {
+		return Utils.waitForPresenceOfAutoElement(address2);
+	}
+	
+	private static WebElement getCity() {
+		return Utils.waitForPresenceOfAutoElement(city);
+	}
+	
+	private static WebElement getZicode() {
+		return Utils.waitForPresenceOfAutoElement(postcode);
+	}
+	public static WebElement getState() {
+		return Utils.waitForPresenceOfAutoElement(state);
+	}
+	
+	public static WebElement getAdditionalInfo() {
+		return Utils.waitForPresenceOfAutoElement(otherinfo);
+	}
+	
+	public static WebElement getHomePhone() {
+		return Utils.waitForPresenceOfAutoElement(homePhone);
+	}
+	
+	public static WebElement getMobilephone() {
+		return Utils.waitForPresenceOfAutoElement(mobilePhone);
+	}
+	
+	public static WebElement getAlias() {
+		return Utils.waitForPresenceOfAutoElement(alias);
+	}
+	
+	public static WebElement getRegisterButton() {
+		return Utils.waitForLinkToBeClickable(submitAccount);
+	}
+	
+
 	// setters
-	public void setcustomerFirstnameField(String firstName) {
+	public static void clickMr() {
+		if (!getMrRadioButton().isSelected()) {
+			getMrRadioButton().click();
+		}
+	}
+
+	public static void clickMrs() {
+		if (!getMrsRadioButton().isSelected()) {
+			getMrsRadioButton().click();
+		}
+	}
+
+	public static void setcustomerFirstnameField(String firstName) {
 		getcustomerFirstnameField().sendKeys(firstName);
 	}
 
-	public void setcustomerLastnameField(String secondName) {
+	public static void setcustomerLastnameField(String secondName) {
 		getcustomerLastnameField().sendKeys(secondName);
 	}
 
-	public void setRegistrationEmailAddress(String string) {
+	public static void setRegistrationEmailAddress(String string) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	public void setcustomerPasswordField(String string) {
-		// TODO Auto-generated method stub
-		
+	public static void setcustomerPasswordField(String password) {
+		getPasswordField().sendKeys(password);
+
 	}
 
-	public void setcustomerBirthDate(String string, String string2, String string3) {
+	public static void setcustomerBirthDate(String string, String string2, String string3) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	public void signupForNewsletter() {
-		// TODO Auto-generated method stub
+	public static void signupForNewsletter() {
+		if(!getSignupForNewsletterCheckbox().isSelected()) {
+			getSignupForNewsletterCheckbox().click();
+		}
 		
+
 	}
 
-	public void AcceptToReceiveSpecialOffersFromPartners() {
-		// TODO Auto-generated method stub
-		
+	public static void AcceptToReceiveSpecialOffersFromPartners() {
+		if(!getReceiveOfferCheckbox().isSelected()) {
+			getReceiveOfferCheckbox().click();
+		}
+
 	}
 
-	public void setFirstname(String string) {
-		// TODO Auto-generated method stub
-		
+	public static void setFirstname(String fname) {
+		getFirstName().sendKeys(fname);
+
 	}
 
-	public void setLastName(String string) {
-		// TODO Auto-generated method stub
-		
+	public static void setLastName(String lname) {
+		getLastName().sendKeys(lname);
+
 	}
 
-	public void setCompanyName(String string) {
+	public static void setCompanyName(String string) {
 		// TODO Auto-generated method stub
-		
+
+	}
+	public static void setAddressLine1(String address1) {
+		getAddress1().sendKeys(address1);
+
+	}
+	public static void setAddressLine2(String address2) {
+		getAddres2().sendKeys(address2);
+
 	}
 
-	public void setAddressLine2(String string) {
-		// TODO Auto-generated method stub
-		
+	public static void setCity(String city) {
+		getCity().sendKeys(city);
+
 	}
 
-	public void setCity() {
+	public static void selectState() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	public void selectState() {
-		// TODO Auto-generated method stub
-		
+	public static void setZip_PostalCode(String zip) {
+		getZicode().sendKeys(zip);
+
 	}
 
-	public void setZip_PostalCode(String string) {
+
+	public static void selectCountry() {
 		// TODO Auto-generated method stub
-		
+
+	}
+	
+	public static void setAdditionalInformation(String info) {
+		getAdditionalInfo().sendKeys(info);
+
+	}
+	
+
+	public static void setHomePhone(String homePhone) {
+		getHomePhone().sendKeys(homePhone);
+
 	}
 
-	public void setAdditionalInformation(String string) {
-		// TODO Auto-generated method stub
-		
+	public static void setMMobilePhone(String mobile) {
+		getMobilephone().sendKeys(mobile);
+
 	}
 
-	public void selectCountry() {
-		// TODO Auto-generated method stub
-		
+	public static void setAliasToaddress(String alias) {
+		getAlias().sendKeys(alias);
+
 	}
 
-	public void setHomePhone(String string) {
-		// TODO Auto-generated method stub
-		
-	}
+	public static void submitRegistration() {
+		getRegisterButton().click();
 
-	public void setMMobilePhone(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void assignAliasToaddress() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void submitRegistration() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
