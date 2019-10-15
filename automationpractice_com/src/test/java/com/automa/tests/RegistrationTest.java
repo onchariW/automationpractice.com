@@ -1,8 +1,10 @@
 package com.automa.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.pages.HomePage;
+import com.pages.MyAccountPage;
 import com.pages.RegistrationPage;
 import com.utils.Utils;
 
@@ -29,7 +31,8 @@ public class RegistrationTest extends BaseTest {
 		RegistrationPage.setcustomerLastnameField("Wycliffe");
 		//RegistrationPage.setRegistrationEmailAddress("onchari@wycliffe.coma");
 		RegistrationPage.setcustomerPasswordField("fstghfkghgkdhfgkg");
-		RegistrationPage.setcustomerBirthDate("12", "January", "1989");
+		RegistrationPage.dateOfBirth("12", "4", 4);
+		
 		RegistrationPage.signupForNewsletter();
 		RegistrationPage.AcceptToReceiveSpecialOffersFromPartners();
 		
@@ -37,19 +40,23 @@ public class RegistrationTest extends BaseTest {
 		RegistrationPage.setFirstname("Onchari");
 		RegistrationPage.setLastName("Wycliffe");
 		RegistrationPage.setCompanyName("Automation Practice Ltd");
-		RegistrationPage.setAddressLine2("The Mirage ");
+		RegistrationPage.setAddressLine1("The Mirage ");
 		RegistrationPage.setAddressLine2("Nagi Plaza");
 		RegistrationPage.setCity("Nairobi");
-		RegistrationPage.selectState();
+		RegistrationPage.selectState("3");
 		RegistrationPage.setZip_PostalCode("44356");
-		RegistrationPage.selectCountry();
+		RegistrationPage.selectCountry("21");
 		RegistrationPage.setAdditionalInformation("I am real interesed");
 		RegistrationPage.setHomePhone("07054355756");
 		RegistrationPage.setMMobilePhone("43546577");
 		RegistrationPage.setAliasToaddress("Okonu");;
 		
-		Thread.sleep(20000);
 		RegistrationPage.submitRegistration();
+		
+		
+		Assert.assertTrue(MyAccountPage.getLogoutLink().isDisplayed());
+		Assert.assertTrue(MyAccountPage.getCustomerName().isDisplayed(), "is not displayed ");
+		
 	}
 
 }

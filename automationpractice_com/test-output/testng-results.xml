@@ -2,40 +2,40 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-10-10T11:42:17 EAT" name="Default suite" finished-at="2019-10-10T11:43:06 EAT" duration-ms="48952">
+  <suite started-at="2019-10-15T15:07:21 EAT" name="Default suite" finished-at="2019-10-15T15:07:53 EAT" duration-ms="31951">
     <groups>
     </groups>
-    <test started-at="2019-10-10T11:42:17 EAT" name="Default test" finished-at="2019-10-10T11:43:06 EAT" duration-ms="48952">
+    <test started-at="2019-10-15T15:07:21 EAT" name="Default test" finished-at="2019-10-15T15:07:53 EAT" duration-ms="31951">
       <class name="com.automa.tests.RegistrationTest">
-        <test-method is-config="true" signature="setupWebDriver()[pri:0, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:42:17 EAT" name="setupWebDriver" finished-at="2019-10-10T11:42:23 EAT" duration-ms="5650" status="PASS">
+        <test-method is-config="true" signature="setupWebDriver()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:21 EAT" name="setupWebDriver" finished-at="2019-10-15T15:07:27 EAT" duration-ms="5608" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupWebDriver -->
-        <test-method is-config="true" signature="loadWebApplication()[pri:0, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:42:23 EAT" name="loadWebApplication" finished-at="2019-10-10T11:42:33 EAT" duration-ms="10202" status="PASS">
+        <test-method is-config="true" signature="loadWebApplication()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:27 EAT" name="loadWebApplication" finished-at="2019-10-15T15:07:39 EAT" duration-ms="12086" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadWebApplication -->
-        <test-method signature="registerWithUiqueValidEmailAddess()[pri:1, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:42:33 EAT" name="registerWithUiqueValidEmailAddess" finished-at="2019-10-10T11:42:36 EAT" duration-ms="3384" status="PASS">
+        <test-method signature="registerWithUiqueValidEmailAddess()[pri:1, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:39 EAT" name="registerWithUiqueValidEmailAddess" finished-at="2019-10-15T15:07:41 EAT" duration-ms="2599" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerWithUiqueValidEmailAddess -->
-        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:42:36 EAT" name="deleteAllCookies" finished-at="2019-10-10T11:42:36 EAT" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:41 EAT" name="deleteAllCookies" finished-at="2019-10-15T15:07:41 EAT" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteAllCookies -->
-        <test-method is-config="true" signature="loadWebApplication()[pri:0, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:42:36 EAT" name="loadWebApplication" finished-at="2019-10-10T11:42:39 EAT" duration-ms="2267" status="PASS">
+        <test-method is-config="true" signature="loadWebApplication()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:41 EAT" name="loadWebApplication" finished-at="2019-10-15T15:07:44 EAT" duration-ms="2326" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadWebApplication -->
-        <test-method signature="createAccountSuccessfullyWithAllRequiredValidData()[pri:2, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:42:39 EAT" name="createAccountSuccessfullyWithAllRequiredValidData" finished-at="2019-10-10T11:43:05 EAT" duration-ms="26811" status="PASS">
+        <test-method signature="createAccountSuccessfullyWithAllRequiredValidData()[pri:2, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:44 EAT" name="createAccountSuccessfullyWithAllRequiredValidData" finished-at="2019-10-15T15:07:52 EAT" duration-ms="8666" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAccountSuccessfullyWithAllRequiredValidData -->
-        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:43:05 EAT" name="deleteAllCookies" finished-at="2019-10-10T11:43:05 EAT" duration-ms="13" status="PASS">
+        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:52 EAT" name="deleteAllCookies" finished-at="2019-10-15T15:07:52 EAT" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteAllCookies -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.automa.tests.RegistrationTest@2805c96b]" started-at="2019-10-10T11:43:05 EAT" name="tearDownSuite" finished-at="2019-10-10T11:43:06 EAT" duration-ms="592" status="PASS">
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:52 EAT" name="tearDownSuite" finished-at="2019-10-15T15:07:53 EAT" duration-ms="610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSuite -->

@@ -3,6 +3,8 @@ package com.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import com.utils.Utils;
 
@@ -33,7 +35,7 @@ public class RegistrationPage extends BasePage {
 
 	static By state = By.xpath("//select[@id =\"id_state\"]");
 	static By postcode = By.id("postcode");
-	static By country = By.xpath("//select[@id= \"id_country\"]/option[@value =\"21\"]");
+	static By country = By.xpath("//select[@id= \"id_country\"]");
 	static By otherinfo = By.id("other");
 
 	static By homePhone = By.id("phone");
@@ -116,11 +118,16 @@ public class RegistrationPage extends BasePage {
 		return Utils.waitForPresenceOfAutoElement(city);
 	}
 	
+	
+	public static WebElement getState() {
+		return Utils.waitForPresenceOfAutoElement(state);
+	}
 	private static WebElement getZicode() {
 		return Utils.waitForPresenceOfAutoElement(postcode);
 	}
-	public static WebElement getState() {
-		return Utils.waitForPresenceOfAutoElement(state);
+	
+	public static WebElement getCountry() {
+		return Utils.waitForPresenceOfAutoElement(country);
 	}
 	
 	public static WebElement getAdditionalInfo() {
@@ -175,9 +182,28 @@ public class RegistrationPage extends BasePage {
 
 	}
 
-	public static void setcustomerBirthDate(String string, String string2, String string3) {
-		// TODO Auto-generated method stub
-
+	public static void selectBirthDay(String dayValue) {
+		 Select select = new Select(getBirthDayField());
+		 select.selectByValue(dayValue);
+	}
+	
+	public static void selectBirthMonth(String monthvisibleText) {
+		
+		
+		Select select = new Select(getBirthMonthField());
+		select.selectByValue(monthvisibleText);;	
+	}
+	
+	public static void  selectBirthYear(int yearindex) {
+		Select select = new Select(getBirthYearField());
+		select.selectByIndex(yearindex);
+	}
+	
+	
+	public static void dateOfBirth(String dayValue, String monthVisibleText, int yearindex) {
+		selectBirthDay(dayValue);
+		selectBirthMonth(monthVisibleText);
+		selectBirthYear(yearindex);
 	}
 
 	public static void signupForNewsletter() {
@@ -205,8 +231,8 @@ public class RegistrationPage extends BasePage {
 
 	}
 
-	public static void setCompanyName(String string) {
-		// TODO Auto-generated method stub
+	public static void setCompanyName(String company) {
+		getCompanyField().sendKeys(company);
 
 	}
 	public static void setAddressLine1(String address1) {
@@ -223,25 +249,28 @@ public class RegistrationPage extends BasePage {
 
 	}
 
-	public static void selectState() {
-		// TODO Auto-generated method stub
-
-	}
+	public static void selectState(String state) {
+		Select select = new Select(getState());
+		select.selectByValue(state);	
+		}
 
 	public static void setZip_PostalCode(String zip) {
 		getZicode().sendKeys(zip);
-
 	}
 
 
-	public static void selectCountry() {
-		// TODO Auto-generated method stub
-
+	public static void selectCountry(String country) {
+		Select select = new Select(getCountry());
+		
+		String  selectedOption = select.getFirstSelectedOption().getText();
+		if(!selectedOption.equalsIgnoreCase("United States")) {
+			select.selectByValue(country);
+		}
+		System.out.println(selectedOption + "Is already selected");
 	}
 	
 	public static void setAdditionalInformation(String info) {
 		getAdditionalInfo().sendKeys(info);
-
 	}
 	
 
@@ -256,6 +285,7 @@ public class RegistrationPage extends BasePage {
 	}
 
 	public static void setAliasToaddress(String alias) {
+		getAlias().clear();
 		getAlias().sendKeys(alias);
 
 	}

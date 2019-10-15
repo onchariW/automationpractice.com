@@ -8,7 +8,7 @@ import com.pages.MyAccountPage;
 
 public class LoginTest extends BaseTest {
 	
-	@Test(priority = 1)
+	//@Test(priority = 1)
 	public void verifyAuthenticationPageTitle() {
 		HomePage.clickSignInLink();
 	    
@@ -29,5 +29,8 @@ public class LoginTest extends BaseTest {
 		authentication.login("test1@automationpractice.com", "28328719@Aut?!");
 		
 		Assert.assertTrue(MyAccountPage.getLogoutLink().isDisplayed());
+		Assert.assertTrue(MyAccountPage.getCustomerName().isDisplayed(), "is not displayed ");
 	}
+	
+	
 }
