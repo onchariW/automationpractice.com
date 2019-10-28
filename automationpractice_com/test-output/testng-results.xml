@@ -1,45 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="2" total="8" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-10-15T15:07:21 EAT" name="Default suite" finished-at="2019-10-15T15:07:53 EAT" duration-ms="31951">
+  <suite started-at="2019-10-16T08:12:56 EAT" name="Suite_Automation" finished-at="2019-10-16T08:12:56 EAT" duration-ms="110">
     <groups>
+      <group name="ABC">
+        <method signature="iContextDataProviderTest.groupA(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@45018215]" name="groupA" class="com.automa.tests.iContextDataProviderTest"/>
+      </group> <!-- ABC -->
+      <group name="XYZ">
+        <method signature="iContextDataProviderTest.groupX(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@647fd8ce]" name="groupX" class="com.automa.tests.iContextDataProviderTest"/>
+      </group> <!-- XYZ -->
     </groups>
-    <test started-at="2019-10-15T15:07:21 EAT" name="Default test" finished-at="2019-10-15T15:07:53 EAT" duration-ms="31951">
-      <class name="com.automa.tests.RegistrationTest">
-        <test-method is-config="true" signature="setupWebDriver()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:21 EAT" name="setupWebDriver" finished-at="2019-10-15T15:07:27 EAT" duration-ms="5608" status="PASS">
+    <test started-at="2019-10-16T08:12:56 EAT" name="SearchClothes-1" finished-at="2019-10-16T08:12:56 EAT" duration-ms="44">
+      <class name="com.automa.tests.iContextDataProviderTest">
+        <test-method signature="groupA(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@45018215]" started-at="2019-10-16T08:12:56 EAT" name="groupA" data-provider="iTestContextDataProiver" finished-at="2019-10-16T08:12:56 EAT" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Method A]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupWebDriver -->
-        <test-method is-config="true" signature="loadWebApplication()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:27 EAT" name="loadWebApplication" finished-at="2019-10-15T15:07:39 EAT" duration-ms="12086" status="PASS">
+        </test-method> <!-- groupA -->
+        <test-method signature="groupA(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@45018215]" started-at="2019-10-16T08:12:56 EAT" name="groupA" data-provider="iTestContextDataProiver" finished-at="2019-10-16T08:12:56 EAT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Method B]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loadWebApplication -->
-        <test-method signature="registerWithUiqueValidEmailAddess()[pri:1, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:39 EAT" name="registerWithUiqueValidEmailAddess" finished-at="2019-10-15T15:07:41 EAT" duration-ms="2599" status="PASS">
+        </test-method> <!-- groupA -->
+        <test-method signature="groupA(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@45018215]" started-at="2019-10-16T08:12:56 EAT" name="groupA" data-provider="iTestContextDataProiver" finished-at="2019-10-16T08:12:56 EAT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Method C]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- registerWithUiqueValidEmailAddess -->
-        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:41 EAT" name="deleteAllCookies" finished-at="2019-10-15T15:07:41 EAT" duration-ms="11" status="PASS">
+        </test-method> <!-- groupA -->
+      </class> <!-- com.automa.tests.iContextDataProviderTest -->
+    </test> <!-- SearchClothes-1 -->
+    <test started-at="2019-10-16T08:12:56 EAT" name="SearchClothes-2" finished-at="2019-10-16T08:12:56 EAT" duration-ms="4">
+      <class name="com.automa.tests.iContextDataProviderTest">
+        <test-method signature="groupX(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@647fd8ce]" started-at="2019-10-16T08:12:56 EAT" name="groupX" data-provider="iTestContextDataProiver" finished-at="2019-10-16T08:12:56 EAT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Method X]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteAllCookies -->
-        <test-method is-config="true" signature="loadWebApplication()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:41 EAT" name="loadWebApplication" finished-at="2019-10-15T15:07:44 EAT" duration-ms="2326" status="PASS">
+        </test-method> <!-- groupX -->
+        <test-method signature="groupX(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@647fd8ce]" started-at="2019-10-16T08:12:56 EAT" name="groupX" data-provider="iTestContextDataProiver" finished-at="2019-10-16T08:12:56 EAT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Method Y]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loadWebApplication -->
-        <test-method signature="createAccountSuccessfullyWithAllRequiredValidData()[pri:2, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:44 EAT" name="createAccountSuccessfullyWithAllRequiredValidData" finished-at="2019-10-15T15:07:52 EAT" duration-ms="8666" status="PASS">
+        </test-method> <!-- groupX -->
+        <test-method signature="groupX(java.lang.String)[pri:0, instance:com.automa.tests.iContextDataProviderTest@647fd8ce]" started-at="2019-10-16T08:12:56 EAT" name="groupX" data-provider="iTestContextDataProiver" finished-at="2019-10-16T08:12:56 EAT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Method Z]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createAccountSuccessfullyWithAllRequiredValidData -->
-        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:52 EAT" name="deleteAllCookies" finished-at="2019-10-15T15:07:52 EAT" duration-ms="19" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteAllCookies -->
-        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:com.automa.tests.RegistrationTest@15b204a1]" started-at="2019-10-15T15:07:52 EAT" name="tearDownSuite" finished-at="2019-10-15T15:07:53 EAT" duration-ms="610" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownSuite -->
-      </class> <!-- com.automa.tests.RegistrationTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- groupX -->
+      </class> <!-- com.automa.tests.iContextDataProviderTest -->
+    </test> <!-- SearchClothes-2 -->
+  </suite> <!-- Suite_Automation -->
 </testng-results>

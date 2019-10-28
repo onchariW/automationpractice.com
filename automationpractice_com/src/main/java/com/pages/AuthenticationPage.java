@@ -59,11 +59,20 @@ public class AuthenticationPage extends BasePage {
 		
 	
 		
+		public void clearFields(WebElement element) {
+			if(!element.getAttribute("value").isEmpty()) {
+				element.clear();
+			}
+		}
 
 		
 	//Enter Login Credentials
 	public void setLoginCredentials(String username, String password) {
+		clearFields(getEmailAddressField());
+		
 		getEmailAddressField().sendKeys(username);
+		
+		clearFields(getPasswordField());
 		getPasswordField().sendKeys(password);
 	}
 	
