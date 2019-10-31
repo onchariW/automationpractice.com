@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Suite_Automation">
+
+	<test name="SearchClothes-1">
+		<parameter name="browser" value="Firefox" />
+		<groups>
+			<run>
+				<include name="ABC" />
+			</run>
+		</groups>
+
+		<classes>
+			<class name="com.automa.tests.iContextDataProviderTest" />
+
+		</classes>
+	</test>
+
+	<test name="SearchClothes-2">
+		<parameter name="browser" value="Firefox" />
+		<groups>
+			<run>
+				<include name="XYZ" />
+			</run>
+		</groups>
+
+		<classes>
+			<class name="com.automa.tests.iContextDataProviderTest" />
+
+		</classes>
+	</test>
+</suite> <!-- Suite -->
