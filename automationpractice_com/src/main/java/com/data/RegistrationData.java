@@ -3,6 +3,8 @@ package com.data;
 import org.testng.annotations.DataProvider;
 
 
+
+
 public class RegistrationData {
 
 	@DataProvider(name = "RegistrationData")

@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.pages.*;
-
+import com.utils.ExcelUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 //https://www.journaldev.com/21237/testng-factory-annotation
@@ -32,6 +32,11 @@ public class BaseTest {
     public HomePage homePage; 
     public static AuthenticationPage authentication;
     public static RegistrationPage registration;
+    
+	String excelPath = System.getProperty("user.dir") + "/src/test/java/resources/logins.xlsx";;
+	String sheetName = "Sheet3";
+	ExcelUtils excelUtils  = null;
+	
 	
 	@BeforeTest(alwaysRun = true)
 	//@Parameters({"", "", "", ""})
@@ -47,6 +52,7 @@ public class BaseTest {
 		homePage = new HomePage(driver);
 		authentication = new AuthenticationPage(driver);
 		registration = new RegistrationPage(driver);
+		excelUtils = new ExcelUtils(excelPath, sheetName);
 		
 		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}

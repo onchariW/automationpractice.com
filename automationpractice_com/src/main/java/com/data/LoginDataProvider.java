@@ -1,7 +1,15 @@
 package com.data;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
 /*
  * Should return the data of type object
@@ -9,27 +17,33 @@ import org.testng.annotations.Test;
 public class LoginDataProvider {
 
 	@DataProvider(name = "LoginData")
-	public Object[][] LoginData() {
+	public Object[][] LoginData() throws FileNotFoundException {
+		//static String projectpathString = System.getProperty("user.dir");
+		//static String workbookLocation = projectpathString + "/src/test/java/resources/logins.xlsx";
 		
-		Object[][] result = new Object[5][2];
-		result[0][0] = "Admin1";
-		result[0][1] = "pass1";
-		
-		result[1][0] = "Admin2";
-		result[1][1] = "pass2";
-		
-		result[3][0] = "Admin3";
-		result[3][1] = "pass3";
-		
-		result[4][0] = "Admin4";
-		result[4][1] = "pass4";
-		
+		 String filepath = System.getProperty("user.dir") + "/src/test/java/resources/";
+		 String fileName = "logins.xlsx";
+		// String sheetName = "Sheet4";
+		 Object[][] result = null;
+			
+		try {
+			File file = new File(filepath + "/" + fileName);
+			FileInputStream inputStream = new FileInputStream(file);
+			Workbook workbook = new XSSFWorkbook(inputStream);
+			Sheet sheet = workbook.getSheetAt(2);
+			int rowCount = (sheet.getLastRowNum() - sheet.getFirstRowNum()) ;
+			result = new Object[rowCount][2];
+			
+			for (int rw = 1; rw < rowCount; rw++) {
+				Row row = sheet.getRow(rw);
+				for (int cm = 0; cm < row.getLastCellNum(); cm++) {
+					result[rw][cm] = row.getCell(cm).getStringCellValue();
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return result;
-	}
-	
-	
-	@Test(dataProvider = "LoginData")
-	public void useDataProvider(String user, String pass) {
-		System.out.println("\tUsername :" + user + "\n\t Password :" + pass);
 	}
 }

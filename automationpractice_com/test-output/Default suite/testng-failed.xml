@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automa.tests.ClothSearchTest">
+      <class name="com.automa.tests.LoginDataProviderTest">
         <methods>
-          <include name="searchCloth"/>
+          <include name="tearDownSuite"/>
+          <include name="deleteAllCookies"/>
+          <include name="setupWebDriver"/>
+          <include name="loadWebApplication"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- com.automa.tests.ClothSearchTest -->
+      </class> <!-- com.automa.tests.LoginDataProviderTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
